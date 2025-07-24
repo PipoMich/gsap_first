@@ -28,8 +28,7 @@ const Hero = () => {
       stagger: 0.06,
       delay: 1,
     });
-    gsap
-      .timeline({
+    gsap.timeline({
         scrollTrigger: {
           trigger: "#hero",
           start: "top top",
@@ -43,8 +42,7 @@ const Hero = () => {
     const startValue = isMobile ? "top50%" : "center60%";
     const endValue = isMobile ? "120% top " : "bottom top";
 
-    const tl = gsap
-      .timeline({
+    const tl = gsap.timeline({
         scrollTrigger: {
           trigger: "video",
           start: startValue,
