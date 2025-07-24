@@ -7,6 +7,13 @@ import { SplitText } from "gsap/all";
 const Cocktails = () => {
   useGSAP(() => {
     const paragraphSplit = new SplitText(".subtitl", { type: "lines" });
+    const cocktailsTimeline = gsap.timeline({
+      scrollTrigger: {
+        trigger: "#cocktails",
+        start: "top center",
+        end:"top 80%"
+      },
+    });
     const parallaxTimeline = gsap.timeline({
       scrollTrigger: {
         trigger: "#cocktails",
@@ -24,13 +31,12 @@ const Cocktails = () => {
         x: 100,
         y: 100,
       });
-    gsap.from(paragraphSplit.lines, {
+    cocktailsTimeline.from(paragraphSplit.lines, {
       opacity: 0,
-      yPercent: 100,
-      duration: 1.8,
+      yPercent:100,
+      duration: 1,
       ease: "expo.out",
-      stagger: 0.06,
-      delay: 3,
+      stagger: 0.1,
     });
   });
   return (
@@ -52,7 +58,7 @@ const Cocktails = () => {
           <ul>
             {cocktailLists.map(({ name, country, detail, price }) => (
               <li key={name}>
-                <div className="md:me-28">
+                <div className="md:me-28 subtitl">
                   <h3>{name}</h3>
                   <p>
                     {country} | {detail}
@@ -68,7 +74,7 @@ const Cocktails = () => {
           <ul>
             {mockTailLists.map(({ name, country, detail, price }) => (
               <li key={name}>
-                <div className="md:me-28">
+                <div className="me-28 subtitl">
                   <h3>{name}</h3>
                   <p>
                     {country} | {detail}
