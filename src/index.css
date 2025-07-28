@@ -102,6 +102,9 @@ body {
         .right-leaf {
             @apply absolute right-0 md:bottom-0 xl:top-0 2xl:top-12 top-1/2 md:w-fit w-24;
         }
+        .arrow{
+           @apply absolute left-1/2 -translate-x-1/2 top-[50%] right-auto md:left-auto md:translate-x-0 md:right-60 md:bottom-0 xl:top-0 2xl:top-96 w-5 md:w-fit;
+        }
 
         .body {
             @apply container mx-auto absolute left-1/2 -translate-x-1/2 lg:bottom-20 top-auto md:top-[30vh] flex justify-between items-end px-5;

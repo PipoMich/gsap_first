@@ -11,7 +11,19 @@ const Cocktails = () => {
       scrollTrigger: {
         trigger: "#cocktails",
         start: "top center",
-        end:"top 80%"
+        end: "bottom 50%",
+        onEnter: () => {
+          cocktailsTimeline.restart(); 
+        },
+         onEnterBack: () => {
+          cocktailsTimeline.restart(); 
+        },
+        onLeave: () => {
+          gsap.set(paragraphSplit.lines, { opacity: 0, yPercent: 100 });
+        },
+        onLeaveBack: () => {
+          gsap.set(paragraphSplit.lines, { opacity: 0, yPercent: 100 });
+        },
       },
     });
     const parallaxTimeline = gsap.timeline({
@@ -33,7 +45,7 @@ const Cocktails = () => {
       });
     cocktailsTimeline.from(paragraphSplit.lines, {
       opacity: 0,
-      yPercent:100,
+      yPercent: 100,
       duration: 1,
       ease: "expo.out",
       stagger: 0.1,

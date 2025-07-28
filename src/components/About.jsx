@@ -12,6 +12,17 @@ const About = () => {
       scrollTrigger: {
         trigger: "#about",
         start: "top center",
+        onEnter: () => {
+          scrollTimeline.restart(); 
+        },
+        onEnterBack: () => {
+          scrollTimeline.restart(); 
+        },onLeave: () => {
+          gsap.set(titleSplit.lines, { opacity: 0, yPercent: 100 });
+        },
+        onLeaveBack: () => {
+          gsap.set(titleSplit.lines, { opacity: 0, yPercent: 100 });
+        },
       },
     });
     scrollTimeline
@@ -21,13 +32,23 @@ const About = () => {
         yPercent: 100,
         ease: "expo.out",
         stagger: 0.02,
-      })
+      },"<")
       .from(".top-grid div, .bottom-grid div", {
         opacity: 0,
         duration: 1,
         ease: "power1.inOut",
         stagger: 0.04,
-      },'-=0.5');
+      },"<")
+      .from(
+        ".sub",
+        {
+          xPercent: 100,
+          opacity: 0,
+          duration: 1,
+          ease: "power1.inOut",
+        },
+        "<"
+      );
   });
   return (
     <div id="about">
@@ -40,7 +61,7 @@ const About = () => {
               from muddle to garnish
             </h2>
           </div>
-          <div className="sub-content">
+          <div className="sub-content sub">
             <p>
               Every cocktail we serve is a reflection of our obsession with
               detail — from the first muddle to the final garnish. That care is
