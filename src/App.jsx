@@ -16,6 +16,7 @@ const App = () => {
       <Cocktails />
       <About />
       <Art />
+
     </main>
   );
 };
