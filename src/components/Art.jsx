@@ -31,8 +31,8 @@ const Art = () => {
         ease: "power1.inOut",
       })
       .to(".masked-content", {
-        opacity:1,
-        duration:1,
+        opacity: 1,
+        duration: 1,
         ease: "power1.inOut",
       });
   });
@@ -68,6 +68,16 @@ const Art = () => {
         <div className="masked-container">
           <h2 className="will-fade">Sip-Worthy Perfection</h2>
           <div className="masked-content">
+             <img
+              src="/images/drink4.png"
+              alt="left-drink"
+              className="left-drink "
+            />
+            <img
+              src="/images/drink3.png"
+              alt="right-drink"
+              className="right-drink"
+            />
             <h3>Made with Craft, Poured with Passion</h3>
             <p>
               This isn’t just a drink. It’s a carefully crafted moment made just
