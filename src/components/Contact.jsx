@@ -12,17 +12,18 @@ const Contact = () => {
 
   contactSplit.chars.forEach((char) => char.classList.add("text-gradient"));
 
-  const textAnim = gsap.timeline({
+  const textAnime = gsap.timeline({
     scrollTrigger: {
       trigger: "#contact",
-      start: "top top",
+      start: "top center",
       end: "bottom top",
-      onEnter: () => textAnim.restart(),
-      onEnterBack: () => textAnim.restart(),
+      onEnter: () => textAnime.restart(),
+      onEnterBack: () => textAnime.restart(),
+      markers: true,
     },
   });
 
-  textAnim.fromTo(contactSplit.chars,{
+  textAnime.fromTo(contactSplit.chars,{
     opacity:0
   } ,{
     opacity:1,
