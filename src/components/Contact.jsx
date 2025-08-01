@@ -10,55 +10,74 @@ const Contact = () => {
     const pSplit = new SplitText("#contact p ", { type: "chars, words" });
     const hSplit = new SplitText(".head ", { type: "chars, words" });
 
-  contactSplit.chars.forEach((char) => char.classList.add("text-gradient"));
+    contactSplit.chars.forEach((char) => char.classList.add("text-gradient"));
 
-  const textAnime = gsap.timeline({
-    scrollTrigger: {
-      trigger: "#contact",
-      start: "top center",
-      end: "bottom top",
-      onEnter: () => textAnime.restart(),
-      onEnterBack: () => textAnime.restart(),
-      markers: true,
-    },
-  });
+    const textAnime = gsap.timeline({
+      scrollTrigger: {
+        trigger: "#contact",
+        start: "top center",
+        end: "bottom top",
+        onEnter: () => textAnime.restart(),
+        onEnterBack: () => textAnime.restart(),
+      },
+    });
 
-  textAnime.fromTo(contactSplit.chars,{
-    opacity:0
-  } ,{
-    opacity:1,
-    yPercent: 0,
-    duration: 0.5,
-    ease: "expo.out",
-    stagger: 0.04,
-  })
-  .fromTo(hSplit.chars,{
-   opacity:0
- } ,{
-   opacity:1,
-   yPercent: 0,
-   duration: 0.5,
-   ease: "expo.out",
-   stagger: 0.03,
- },'+=0.01')
-.fromTo(pSplit.chars,{
-    opacity:0
-  } ,{
-    opacity:1,
-    yPercent: 0,
-    duration: 0.5,
-    ease: "expo.out",
-    stagger: 0.02,
-  },'+=0.01')
-  .fromTo('.img',{
-    opacity:0
-  } ,{
-    opacity:1,
-    yPercent: 0,
-    duration: 0.5,
-    ease: "expo.out",
-    stagger: 0.02,
-  },'+=0.01');
+    textAnime
+      .fromTo(
+        contactSplit.chars,
+        {
+          opacity: 0,
+        },
+        {
+          opacity: 1,
+          yPercent: 0,
+          duration: 0.5,
+          ease: "expo.out",
+          stagger: 0.04,
+        }
+      )
+      .fromTo(
+        hSplit.chars,
+        {
+          opacity: 0,
+        },
+        {
+          opacity: 1,
+          yPercent: 0,
+          duration: 0.5,
+          ease: "expo.out",
+          stagger: 0.03,
+        },
+        "+=0.01"
+      )
+      .fromTo(
+        pSplit.chars,
+        {
+          opacity: 0,
+        },
+        {
+          opacity: 1,
+          yPercent: 0,
+          duration: 0.5,
+          ease: "expo.out",
+          stagger: 0.02,
+        },
+        "+=0.01"
+      )
+      .fromTo(
+        ".img",
+        {
+          opacity: 0,
+        },
+        {
+          opacity: 1,
+          yPercent: 0,
+          duration: 0.5,
+          ease: "expo.out",
+          stagger: 0.02,
+        },
+        "+=0.01"
+      );
   });
   return (
     <footer id="contact" className="noisy">
@@ -75,24 +94,24 @@ const Contact = () => {
       <div className="content">
         <h2 className="titre">Where To Find Us</h2>
         <h3 className="head"> Visit our store</h3>
-        <p >9QRJ+PW8, Avenue Hassan II, Oulad Teima, Maroc</p>
+        <p>9QRJ+PW8, Avenue Hassan II, Oulad Teima, Maroc</p>
         <div>
           <h3 className="head">Contact Us</h3>
-          <p >+212 622-066371</p>
-          <p >tatmimahdi@gmail.com</p>
+          <p>+212 622-066371</p>
+          <p>tatmimahdi@gmail.com</p>
         </div>
 
         <div>
           <h3 className="head">Open every day</h3>
           {openingHours.map((time) => (
-            <p key={time.day} >
+            <p key={time.day}>
               {time.day}:{time.time}
             </p>
           ))}
         </div>
         <div>
           <h3 className="head">Socials</h3>
-          <div className="flex-center gap-5" >
+          <div className="flex-center gap-5">
             {socials.map((social) => (
               <a
                 key={social.name}
