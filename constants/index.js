@@ -110,22 +110,22 @@ const storeInfo = {
 };
 
 const openingHours = [
-  { day: "Mon–Thu", time: "11:00am – 12am" },
-  { day: "Fri", time: "11:00am – 2am" },
-  { day: "Sat", time: "9:00am – 2am" },
-  { day: "Sun", time: "9:00am – 1am" },
+  { day: "Mon–Thu ", time: " 11:00am – 12am" },
+  { day: "Fri ", time: " 11:00am – 2am" },
+  { day: "Sat ", time: " 9:00am – 2am" },
+  { day: "Sun ", time: " 9:00am – 1am" },
 ];
 
 const socials = [
   {
     name: "Instagram",
     icon: "/images/insta.png",
-    url: "#",
+    url: "https://www.instagram.com/mah_dii",
   },
   {
     name: "X (Twitter)",
     icon: "/images/x.png",
-    url: "#",
+    url: "https://x.com/shawthereaI_",
   },
   {
     name: "Facebook",
